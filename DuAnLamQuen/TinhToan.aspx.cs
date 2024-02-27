@@ -15,11 +15,18 @@ namespace DuAnLamQuen
         }       
         protected void btnCong_Click(object sender, EventArgs e)
         {
-            double soThuNhat = Convert.ToDouble(txtSo1.Text);
-            double soThuHai = Convert.ToDouble(txtSo2.Text);
-
-            double Kq = soThuNhat + soThuHai;
-            txtKetQua.Text = Kq.ToString();
+            try
+            {
+                double soThuNhat = Convert.ToDouble(txtSo1.Text);
+                double soThuHai = Convert.ToDouble(txtSo2.Text);
+                double Kq = soThuNhat + soThuHai;
+                txtKetQua.Text = Kq.ToString();
+                lblThongBao1.Text = "";
+            }
+            catch (Exception ex) {
+                lblThongBao1.Text = "Dữ liệu nhập không hợp lệ";
+            }
+          
         }
 
         protected void btnTru_Click(object sender, EventArgs e)
